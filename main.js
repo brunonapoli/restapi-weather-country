@@ -3,7 +3,6 @@ let botonInput = document.getElementById('botonBusqueda');
 function validarInput() {
     let valorInput = document.getElementById('paisBusqueda').value;
     valorInput = valorInput.toLowerCase();
-    console.log(valorInput.length)
     if (valorInput.length == 0) {
         console.log('No ha ingresado nada')
     }
@@ -40,6 +39,8 @@ function conseguirValor(valor) {
 
 
 botonInput.addEventListener('click', () => {
+    bandera.innerHTML = ``
+    datos.innerHTML = ``
     let valorInput = validarInput();
     conseguirValor(valorInput);
 });
