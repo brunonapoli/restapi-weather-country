@@ -1,7 +1,5 @@
 let botonInput = document.getElementById('botonBusqueda');
 
-// API KEY for the weather PI = da6778deeada4cc8ab6172811221805
-
 function validarInput() {
     let valorInput = document.getElementById('paisBusqueda').value;
     valorInput = valorInput.toLowerCase();
@@ -11,12 +9,24 @@ function validarInput() {
     return valorInput
 };
 
-function imprimirDatos(dato) {
-    bandera.innerHTML = `<img src="${dato[0]}" class="bandera">`
-    datos.innerHTML += `<p>Nombre país: ${dato[1]} </p>`
-    datos.innerHTML += `<p>Capital del país: ${dato[2]} </p>`
-    datos.innerHTML += `<p>Continente país: ${dato[3]} </p>`
-    datos.innerHTML += `<p>Número de población: ${dato[4]} </p>`
+function mostrarDatosPais(datoPais) {
+    bandera.innerHTML = `<img src="${datoPais[0]}" class="bandera">`
+    datos.innerHTML += `<p>Nombre país: ${datoPais[1]} </p>`
+    datos.innerHTML += `<p>Capital del país: ${datoPais[2]} </p>`
+    datos.innerHTML += `<p>Continente país: ${datoPais[3]} </p>`
+    datos.innerHTML += `<p>Número de población: ${datoPais[4]} </p>`
+};
+
+function mostrarDatosClima(datoClima) {
+    clima.innerHTML =` 
+        <p>
+            Horario: ${datoClima[0].substring(11)} <br>
+            Temperatura en C: ${datoClima[1]}° <br>
+            Temperatura en F: ${datoClima[2]}° <br>
+            Dirección del viento: ${datoClima[3]} <br>
+            Descripción clima: ${datoClima[4]} <br>
+            <img src = "http:${datoClima[5]}">
+        </p>`
 };
 
 function conseguirValor(valor) {
@@ -26,7 +36,6 @@ function conseguirValor(valor) {
     fetch (paisURL)
         .then((response) => response.json())
         .then(data => {
-            console.log(data[0])
 
             let bandera = data[0].flags['svg'];
             let nombrePais = data[0].name['common'];
@@ -38,16 +47,19 @@ function conseguirValor(valor) {
             fetch(climaURL)
                 .then(response => response.json())
                 .then(data => {
+                    let horario = data.location.localtime
                     let tempC = data.current.temp_c
                     let tempF = data.current.temp_f
-                    let iconClima = data.current.condition.icon
+                    let viento = data.current.wind_dir
                     let descClima = data.current.condition.text
+                    let iconClima = data.current.condition.icon
 
-                    climaPais.push(tempC, tempF, iconClima, descClima)
+                    climaPais.push(horario, tempC, tempF, viento, descClima, iconClima)
+                    mostrarDatosClima(climaPais)
                 })
 
             datosPais.push(bandera, nombrePais, capital, region, reputacion)
-            imprimirDatos(datosPais);
+            mostrarDatosPais(datosPais);
         });
 };
 
@@ -55,6 +67,23 @@ function conseguirValor(valor) {
 botonInput.addEventListener('click', () => {
     bandera.innerHTML = ``
     datos.innerHTML = ``
+    clima.innerHTML =``
     let valorInput = validarInput();
     conseguirValor(valorInput);
 });
+
+//FUNCIÓN PARA TRABAJAR CON LAS 2 APIS A LA VEZ
+// function conseguirValor() {
+//     let urls = [
+//         `https://restcountries.com/v3.1/name/United Kingdom?fullText=true`,
+//         `http://api.weatherapi.com/v1/current.json?key=da6778deeada4cc8ab6172811221805&q=London`
+//       ]
+//       let requests = urls.map(url => fetch(url));
+//       Promise.all(requests)
+//         // map array of responses into an array of response.json() to read their content
+//         .then(responses => Promise.all(responses.map(r => r.json())))
+//         // all JSON answers are parsed: "users" is the array of them
+//         .then(datos => {
+//             console.log(datos)
+//         })
+// };
