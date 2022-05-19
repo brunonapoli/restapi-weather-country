@@ -29,10 +29,11 @@ function mostrarDatosClima(datoClima) {
         </p>`
 };
 
-function conseguirValor(valor) {
+function conseguirValor() {
     let datosPais = [];
     let climaPais = [];
-    let paisURL = `https://restcountries.com/v3.1/name/${valor}?fullText=true`
+    // let paisURL = `https://restcountries.com/v3.1/name/${valor}?fullText=true`
+    let paisURL = `https://restcountries.com/v3.1/name/germany?fullText=true`
     fetch (paisURL)
         .then((response) => response.json())
         .then(data => {
@@ -63,14 +64,15 @@ function conseguirValor(valor) {
         });
 };
 
+conseguirValor();
 
-botonInput.addEventListener('click', () => {
-    bandera.innerHTML = ``
-    datos.innerHTML = ``
-    clima.innerHTML =``
-    let valorInput = validarInput();
-    conseguirValor(valorInput);
-});
+// botonInput.addEventListener('click', () => {
+//     bandera.innerHTML = ``
+//     datos.innerHTML = ``
+//     clima.innerHTML =``
+//     let valorInput = validarInput();
+//     conseguirValor(valorInput);
+// });
 
 //FUNCIÓN PARA TRABAJAR CON LAS 2 APIS A LA VEZ
 // function conseguirValor() {
