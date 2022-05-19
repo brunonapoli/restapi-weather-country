@@ -8,14 +8,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input id="paisBusqueda" type="text" placeholder="Ingrese el país">
-    <button id="botonBusqueda">Buscar</button>
+
+    <div class="inputBusqueda">
+        <input id="paisBusqueda" type="text" placeholder="Ingrese el país">
+        <label for="name" class="form__label">Nombre País</label>
+        <button id="botonBusqueda">Buscar</button>
+    </div>
     
     <div id="bandera"></div>
+    <div id="datosPaisClima">
+        <div id="datos"></div>
+        <div id="clima"></div>
+    </div>
 
-    <div id="datos"></div>
-
-    <div id="clima"></div>
 
     <script src="main.js"></script>
 </body>

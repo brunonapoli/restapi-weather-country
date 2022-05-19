@@ -1,5 +1,84 @@
-.bandera {
-    margin-top: 40px;
-    height: 50%;
+
+.inputBusqueda{
+    /* margin-top: 2rem;
+    text-align: center; */
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
     width: 50%;
+}
+
+#paisBusqueda{
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 1.3rem;
+    color: white;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+paisBusqueda::placeholder {
+    color: transparent;
+}
+
+paisBusqueda:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+}
+
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: gray;
+}
+
+/* #paisBusqueda:focus {
+    ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $primary;
+      font-weight:700;    
+    }
+    padding-bottom: 6px;  
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, $primary,$secondary);
+    border-image-slice: 1;
+  }
+  /* reset input */
+  /* .form__field{
+    &:required,&:invalid { box-shadow:none; }
+  } */ */
+
+.bandera {
+    justify-content: center;
+    margin-top: 40px;
+    height: 30%;
+    width: 30%;
+}
+#bandera {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 2rem;
+}
+
+#datosPaisClima{
+    display: flex;
+    justify-content: center;
+}
+
+#clima{
+    text-align: center;
 }
