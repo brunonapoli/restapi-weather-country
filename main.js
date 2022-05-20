@@ -18,15 +18,32 @@ function mostrarDatosPais(datoPais) {
 };
 
 function mostrarDatosClima(datoClima) {
-    clima.innerHTML =` 
-        <p>
-            Horario: ${datoClima[0].substring(11)} <br>
-            Temperatura en C: ${datoClima[1]}° <br>
-            Temperatura en F: ${datoClima[2]}° <br>
-            Dirección del viento: ${datoClima[3]} <br>
+    let cambio = true
+    // `<p> Dirección del viento: ${datoClima[3]} <br> </p>`
+    // `<p> Temperatura en C: ${datoClima[1]}° <br> </p>`
+    // `<p> Temperatura en F: ${datoClima[2]}° <br> </p>`
+    clima.innerHTML += `<p> Horario: ${datoClima[0].substring(11)} <br> </p>`
+
+    if (cambio) {
+        clima.innerHTML += `<p> Temperatura en C: ${datoClima[1]}° <br> 
+                <button class="boton1">C°</button>                
+            </p>`
+    } else {
+        clima.innerHTML += `<p> Temperatura en F: ${datoClima[2]}° <br> 
+                <button class="boton1">F°</button>
+            </p>`
+    }
+
+    clima.innerHTML += 
+        `<p>
             Descripción clima: ${datoClima[4]} <br>
             <img src = "http:${datoClima[5]}">
         </p>`
+
+    let botonCambio = document.getElementsByClassName('boton1');
+    botonCambio.addEventListener('click', () => {
+        cambio != cambio
+    });
 };
 
 function conseguirValor() {

@@ -1,6 +1,6 @@
 
 .inputBusqueda{
-    /* margin-top: 2rem;
+     /* margin-top: 2rem;
     text-align: center; */
     position: relative;
     padding: 15px 0 0;
@@ -8,7 +8,7 @@
     width: 50%;
 }
 
-#paisBusqueda{
+/* #paisBusqueda{
     font-family: inherit;
     width: 100%;
     border: 0;
@@ -39,7 +39,7 @@ paisBusqueda:placeholder-shown ~ .form__label {
     transition: 0.2s;
     font-size: 1rem;
     color: gray;
-}
+} */
 
 /* #paisBusqueda:focus {
     ~ .form__label {
@@ -60,7 +60,7 @@ paisBusqueda:placeholder-shown ~ .form__label {
   /* reset input */
   /* .form__field{
     &:required,&:invalid { box-shadow:none; }
-  } */ */
+  } */
 
 .bandera {
     justify-content: center;
@@ -81,4 +81,8 @@ paisBusqueda:placeholder-shown ~ .form__label {
 
 #clima{
     text-align: center;
+}
+
+.boton1{
+    border-radius: 100%;
 }
