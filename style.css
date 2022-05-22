@@ -1,72 +1,50 @@
-
 .inputBusqueda{
-     /* margin-top: 2rem;
-    text-align: center; */
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: 50%;
+    margin-top: 2rem;
+    text-align: center;
+    position:relative;
+	margin-bottom:25px;
 }
 
-/* #paisBusqueda{
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid gray;
-    outline: 0;
-    font-size: 1.3rem;
-    color: white;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
+.inputBusqueda label{
+	position:absolute;
+    text-align: center;
+	top:0px;
+	left:37%;
+	font-size:20px;
+	color:rgb(0, 0, 0);	
+    pointer-events:none;
+	transition: all 0.5s ease-in-out;
 }
 
-paisBusqueda::placeholder {
-    color: transparent;
+.inputBusqueda input {
+    border:0;
+    border-bottom:1px solid #555;  
+    background:transparent;
+    width:20%;
+    padding:8px 0 5px 0;
+    font-size:16px;
+    color:rgb(0, 0, 0);
 }
 
-paisBusqueda:placeholder-shown ~ .form__label {
-    font-size: 1.3rem;
-    cursor: text;
-    top: 20px;
+.inputBusqueda input:focus{ 
+    border:none;	
+    outline:none;
+    border-bottom:1px solid #e74c3c;	
+   }
+
+
+.inputBusqueda input:focus ~ label,
+.inputBusqueda input:valid ~ label{
+    top:-12px;
+    font-size:12px;
 }
 
-
-.form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: gray;
-} */
-
-/* #paisBusqueda:focus {
-    ~ .form__label {
-      position: absolute;
-      top: 0;
-      display: block;
-      transition: 0.2s;
-      font-size: 1rem;
-      color: $primary;
-      font-weight:700;    
-    }
-    padding-bottom: 6px;  
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, $primary,$secondary);
-    border-image-slice: 1;
-  }
-  /* reset input */
-  /* .form__field{
-    &:required,&:invalid { box-shadow:none; }
-  } */
 
 .bandera {
     justify-content: center;
     margin-top: 40px;
-    height: 30%;
-    width: 30%;
+    height: 20%;
+    width: 20%;
 }
 #bandera {
     text-align: center;
