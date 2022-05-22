@@ -74,15 +74,25 @@ paisBusqueda:placeholder-shown ~ .form__label {
     margin-bottom: 2rem;
 }
 
-#datosPaisClima{
+#datosPaisClima {
     display: flex;
     justify-content: center;
 }
 
-#clima{
+#clima {
     text-align: center;
 }
 
-.boton1{
-    border-radius: 100%;
+.centrarBotones {
+    display: flex;
+}
+
+.boton {
+    cursor: pointer;
+    border-radius: 20%;
+    margin-left: 10px;
+}
+
+.esconder {
+    display: none;
 }
