@@ -11,19 +11,19 @@ function validarInput() {
 
 function mostrarDatosPais(datoPais) {
     bandera.innerHTML = `<img src="${datoPais[0]}" class="bandera">`
-    datos.innerHTML += `<p>Nombre país: ${datoPais[1]} </p>`
-    datos.innerHTML += `<p>Capital del país: ${datoPais[2]} </p>`
-    datos.innerHTML += `<p>Continente país: ${datoPais[3]} </p>`
-    datos.innerHTML += `<p>Número de población: ${datoPais[4]} </p>`
+    datos.innerHTML += `<div class="alinear"><h4>País: </h4><span>${datoPais[1]}</span></div>`
+    datos.innerHTML += `<div class="alinear"><h4>Capital: </h4><span>${datoPais[2]}</span></div>`
+    datos.innerHTML += `<div class="alinear"><h4>Continente: </h4><span>${datoPais[3]} </span></div>`
+    datos.innerHTML += `<div class="alinear"><h4>Población: </h4><span>${datoPais[4]} </span></div>`
 };
 
 function mostrarDatosClima(datoClima) {
-    clima.innerHTML += `<p> Horario: ${datoClima[0].substring(11)} <br> </p>`
+    clima.innerHTML += `<div class="alinear"><h4>Horario:</h4><span>${datoClima[0].substring(11)}</span></div>`
     clima.innerHTML += 
-        `<p>
+        `<span>
             Descripción clima: ${datoClima[4]} <br>
             <img src = "http:${datoClima[5]}">
-        </p>`
+        </span>`
 
     let boton = document.getElementById('boton');
     let parrafo = document.getElementById('cambioTemp');
