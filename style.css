@@ -50,7 +50,7 @@ body {
 
 .contenedor {
     position: absolute;
-    width: 80%;
+    width: 70%;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
@@ -58,14 +58,28 @@ body {
 
 .bandera {
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 30%;
 }
 
-#bandera {
+#pais {
     text-align: center;
     margin-top: 0px;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.titulo {
+    margin: 15px 0;
+    justify-content: center;
+}
+
+.titulo h3 {
+    text-transform: uppercase;
+}
+
+#pais h4 {
+    text-transform: uppercase;
+    color: red;
 }
 
 #datosPaisClima {

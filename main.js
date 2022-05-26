@@ -1,26 +1,23 @@
 let botonInput = document.getElementById('botonBusqueda');
 
-function validarInput() {
-    let valorInput = document.getElementById('paisBusqueda').value;
-    valorInput = valorInput.toLowerCase();
-    if (valorInput.length == 0) {
-        console.log('No ha ingresado nada')
-    }
-    return valorInput
-};
-
 function mostrarDatosPais(datoPais) {
-    bandera.innerHTML = `<img src="${datoPais[0]}" class="bandera">`
-    datos.innerHTML += `<div class="alinear"><h4>País: </h4><span>${datoPais[1]}</span></div>`
+    pais.innerHTML = `<img src="${datoPais[0]}" class="bandera">`
+    pais.innerHTML += `<div class="alinear titulo"><h3>${datoPais[1]}</h3>`
     datos.innerHTML += `<div class="alinear"><h4>Capital: </h4><span>${datoPais[2]}</span></div>`
     datos.innerHTML += `<div class="alinear"><h4>Continente: </h4><span>${datoPais[3]} </span></div>`
     datos.innerHTML += `<div class="alinear"><h4>Población: </h4><span>${datoPais[4]} </span></div>`
 };
 
 function mostrarDatosClima(datoClima) {
-    clima.innerHTML += `<div class="alinear"><h4>Horario:</h4><span>${datoClima[0].substring(11)}</span></div>`
     clima.innerHTML +=
-        `<div class="alinear"><h4>Descripción clima:</h4>
+        `
+        <div id="temperatura" class="centrarBotones">
+            <h4 id="cambioTemp" class="grados"></h4>
+            <span id="cambioTempSpan"></span>
+            <button id="boton" class="boton">C°</button>
+        </div>
+        <div class="alinear"><h4>Horario:</h4><span>${datoClima[0].substring(11)}</span></div>
+        <div class="alinear"><h4>Descripción clima:</h4>
             <span>
                ${datoClima[4]} <br>
             </span>
@@ -52,10 +49,12 @@ function mostrarDatosClima(datoClima) {
 };
 
 function conseguirValor() {
+    let valorInput = document.getElementById('paisBusqueda').value;
+    valorInput = valorInput.toLowerCase();
     let datosPais = [];
     let climaPais = [];
-    // let paisURL = `https://restcountries.com/v3.1/name/${valor}?fullText=true`
-    let paisURL = `https://restcountries.com/v3.1/name/germany?fullText=true`
+    let paisURL = `https://restcountries.com/v3.1/name/${valorInput}?fullText=true`
+    // let paisURL = `https://restcountries.com/v3.1/name/germany?fullText=true`
     fetch (paisURL)
         .then((response) => response.json())
         .then(data => {
@@ -80,24 +79,36 @@ function conseguirValor() {
                     climaPais.push(horario, tempC, tempF, viento, descClima, iconClima)
                     mostrarDatosClima(climaPais)
                 })
+                .catch((error) =>{
+                    console.log(error)
+                    pais.innerHTML = `<h4>Ha ocurrido un error. Vuelva a intentarlo.</h4>`
+                    setTimeout(() => {pais.innerHTML = ``}, 1500);
+                })
 
             datosPais.push(bandera, nombrePais, capital, region, reputacion)
             mostrarDatosPais(datosPais);
         })
         .catch((error) => {
             console.log(error)
+            if (valorInput.length == 0) {
+                pais.innerHTML = `<h4>No ha ingresado nada</h4>`
+                setTimeout(() => {pais.innerHTML = ``}, 1500);
+                console.log('No ha ingresado nada.')
+            } else {
+                pais.innerHTML = `<h4>País no encontrado.</h4>`
+                setTimeout(() => {pais.innerHTML = ``}, 1500);
+            }
         })
 };
 
-conseguirValor();
+// conseguirValor();
 
-// botonInput.addEventListener('click', () => {
-//     bandera.innerHTML = ``
-//     datos.innerHTML = ``
-//     clima.innerHTML =``
-//     let valorInput = validarInput();
-//     conseguirValor(valorInput);
-// });
+botonInput.addEventListener('click', () => {
+    pais.innerHTML = ``
+    datos.innerHTML = ``
+    clima.innerHTML =``
+    conseguirValor();
+});
 
 //FUNCIÓN PARA TRABAJAR CON LAS 2 APIS A LA VEZ
 // function conseguirValor() {
