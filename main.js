@@ -53,8 +53,8 @@ function conseguirValor() {
     valorInput = valorInput.toLowerCase();
     let datosPais = [];
     let climaPais = [];
-    let paisURL = `https://restcountries.com/v3.1/name/${valorInput}?fullText=true`
-    // let paisURL = `https://restcountries.com/v3.1/name/germany?fullText=true`
+    // let paisURL = `https://restcountries.com/v3.1/name/${valorInput}?fullText=true`
+    let paisURL = `https://restcountries.com/v3.1/name/germany?fullText=true`
     fetch (paisURL)
         .then((response) => response.json())
         .then(data => {
@@ -101,14 +101,14 @@ function conseguirValor() {
         })
 };
 
-// conseguirValor();
+conseguirValor();
 
-botonInput.addEventListener('click', () => {
-    pais.innerHTML = ``
-    datos.innerHTML = ``
-    clima.innerHTML =``
-    conseguirValor();
-});
+// botonInput.addEventListener('click', () => {
+//     pais.innerHTML = ``
+//     datos.innerHTML = ``
+//     clima.innerHTML =``
+//     conseguirValor();
+// });
 
 //FUNCIÓN PARA TRABAJAR CON LAS 2 APIS A LA VEZ
 // function conseguirValor() {
