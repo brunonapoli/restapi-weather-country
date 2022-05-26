@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <div class="contenedor">
+    <div id="contenedor" class="contenedor">
         <div class="inputBusqueda">
             <input id="paisBusqueda" type="text" required="">
             <label for="name" class="form__label">Ingrese el país</label>
@@ -21,7 +21,9 @@
             <div id="datos"></div>
             <div id="clima">
                 <div id="temperatura" class="centrarBotones">
-                    <span id="cambioTemp" class="grados"></span> <button id="boton" class="boton">C°</button>
+                    <h4 id="cambioTemp" class="grados"></h4>
+                    <span id="cambioTempSpan"></span>
+                    <button id="boton" class="boton">C°</button>
                 </div>
             </div>
         </div>

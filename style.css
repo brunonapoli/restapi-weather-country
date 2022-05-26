@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: gainsboro;
+    background-color: rgb(247, 243, 243);
 }
 
 .inputBusqueda{
@@ -98,12 +98,24 @@ body {
     margin: 0 0 15px 0;
 }
 
+#temperatura span {
+    padding-bottom: 15px;
+}
+
 .centrarBotones {
     display: flex;
 }
 
 .alinear {
     display: flex;
+}
+
+.alinear span {
+    padding-bottom: 15px;
+}
+
+#clima span img{
+    margin-left: 50px;
 }
 
 .boton {

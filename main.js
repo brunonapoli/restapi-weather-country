@@ -19,25 +19,33 @@ function mostrarDatosPais(datoPais) {
 
 function mostrarDatosClima(datoClima) {
     clima.innerHTML += `<div class="alinear"><h4>Horario:</h4><span>${datoClima[0].substring(11)}</span></div>`
-    clima.innerHTML += 
-        `<span>
-            Descripción clima: ${datoClima[4]} <br>
-            <img src = "http:${datoClima[5]}">
-        </span>`
-
+    clima.innerHTML +=
+        `<div class="alinear"><h4>Descripción clima:</h4>
+            <span>
+               ${datoClima[4]} <br>
+            </span>
+        </div>  
+            <span>
+                <img src = "http:${datoClima[5]}">
+            </span>
+        `
     let boton = document.getElementById('boton');
     let parrafo = document.getElementById('cambioTemp');
-    parrafo.textContent = `Temperatura en C: ${datoClima[1]}°`
+    let spanDato = document.getElementById('cambioTempSpan');
+    parrafo.textContent = `Temperatura en C: `
+    spanDato.textContent = `${datoClima[1]}°`
     let cambio = true
     if (boton) {
         boton.addEventListener('click', () => {
             cambio = !cambio;
             if (cambio) {
                 boton.innerHTML = 'C°'
-                parrafo.textContent = `Temperatura en C: ${datoClima[1]}°`
+                parrafo.textContent = `Temperatura en C:`
+                spanDato.textContent =`${datoClima[1]}°`
             } else {
                 boton.innerHTML = 'F°'
-                parrafo.textContent = `Temperatura en F: ${datoClima[2]}°`
+                parrafo.textContent = `Temperatura en F:`
+                spanDato.textContent = `${datoClima[2]}°`
             }
         });
     }
@@ -75,7 +83,10 @@ function conseguirValor() {
 
             datosPais.push(bandera, nombrePais, capital, region, reputacion)
             mostrarDatosPais(datosPais);
-        });
+        })
+        .catch((error) => {
+            console.log(error)
+        })
 };
 
 conseguirValor();
