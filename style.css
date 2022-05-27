@@ -14,7 +14,7 @@ body {
     position:relative;
 	margin-bottom:25px;
 }
-
+/*
 .inputBusqueda label{
 	position:absolute;
     text-align: center;
@@ -46,15 +46,15 @@ body {
 .inputBusqueda input:valid ~ label{
     top:-12px;
     font-size:12px;
-}
+} */
 
 .contenedor {
     position: absolute;
-    width: 60%;
+    width: 50%;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    /* border: #e74c3c solid 6px; */
+    border: #e74c3c solid 6px;
     border-radius: 10px;
     background-color: rgb(250, 245, 245);
 }
@@ -62,7 +62,7 @@ body {
 .bandera {
     justify-content: center;
     margin-top: 10px;
-    width: 30%;
+    /* width: 30%; */
 }
 
 #pais {
@@ -85,21 +85,27 @@ body {
     color: red;
 }
 
+#pais img {
+    max-width: 40%;
+    height: auto;
+}
+
 #datosPaisClima {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    /* gap: 50px; */
     justify-content: center;
 }
 
 #datos {
-    display: grid;
-    grid-template-rows: auto;
-    /* border: #e74c3c solid 6px; */
+    left: 10%;
+    /* display: grid; */
+    /* grid-template-rows: auto; */
+    border: #e74c3c solid 6px;
     border-radius: 10px;
-    width: 50%;
-    margin-left: 50%;
-    justify-content: flex-end;
+    width: 70%;
+    /* margin-left: 50%; */
+    /* justify-content: flex-end; */
     /* background-color: rgb(250, 245, 245); */
 }
 
@@ -108,16 +114,22 @@ body {
 }
 
 #clima {
-    display: grid;
-    grid-template-rows: auto;
-    /* border: #e74c3c solid 6px; */
-    width: 80%;
+    /* display: grid;
+    grid-template-rows: auto; */
+    border: #e74c3c solid 6px;
+    /* width: 80%; */
     border-radius: 10px;
     /* background-color: rgb(250, 245, 245); */
 }
 
 #clima p {
     margin: 0 0 15px 0;
+}
+
+#clima span img{
+    margin-left: 50px;
+    max-width: 100%;
+    height: auto;
 }
 
 #temperatura span {
@@ -136,9 +148,6 @@ body {
     padding-bottom: 15px;
 }
 
-#clima span img{
-    margin-left: 50px;
-}
 
 .boton {
     position: relative;
