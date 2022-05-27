@@ -4,27 +4,34 @@ function mostrarDatosPais(datoPais) {
     pais.innerHTML = `<img src="${datoPais[0]}" class="bandera">`
     pais.innerHTML += `<div class="alinear titulo"><h3>${datoPais[1]}</h3>`
     datos.innerHTML += `<div class="alinear"><h4>Capital: </h4><span>${datoPais[2]}</span></div>`
-    datos.innerHTML += `<div class="alinear"><h4>Continente: </h4><span>${datoPais[3]} </span></div>`
-    datos.innerHTML += `<div class="alinear"><h4>Población: </h4><span>${datoPais[4]} </span></div>`
+    datos.innerHTML += `<div class="alinear marginTop"><h4>Continente: </h4><span>${datoPais[3]} </span></div>`
+    datos.innerHTML += `<div class="alinear poblacion"><h4>Población: </h4><span>${datoPais[4]} </span></div>`
 };
 
 function mostrarDatosClima(datoClima) {
+    // <span id="boton" class="botonSpan">C°</span>
     clima.innerHTML +=
         `
         <div id="temperatura" class="centrarBotones">
             <h4 id="cambioTemp" class="grados"></h4>
             <span id="cambioTempSpan"></span>
-            <button id="boton" class="boton">C°</button>
+
+            <ul id="boton" class="wrapper">
+                <li class="icon facebook">
+                <span class="tooltip">Celcius</span>
+                <span>C</span>
+                </li>
+            </ul>
+
         </div>
-        <div class="alinear"><h4>Horario:</h4><span>${datoClima[0].substring(11)}</span></div>
-        <div class="alinear"><h4>Descripción clima:</h4>
+        <div class="alinear marginTop"><h4>Horario:</h4><span>${datoClima[0].substring(11)}</span></div>
+        <div class="imagenClima">
+            <h4>Clima:</h4>
             <span>
                ${datoClima[4]} <br>
             </span>
-        </div>  
-            <span>
-                <img src = "http:${datoClima[5]}">
-            </span>
+            <img src = "http:${datoClima[5]}">
+        </div>
         `
     let boton = document.getElementById('boton');
     let parrafo = document.getElementById('cambioTemp');
