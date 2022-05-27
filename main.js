@@ -18,8 +18,8 @@ function mostrarDatosClima(datoClima) {
 
             <ul id="boton" class="wrapper">
                 <li class="icon facebook">
-                <span class="tooltip">Celcius</span>
-                <span>C</span>
+                <span id="palabraTemperatura" class="tooltip">Celcius</span>
+                <span id="letraTemperatura">C</span>
                 </li>
             </ul>
 
@@ -43,11 +43,13 @@ function mostrarDatosClima(datoClima) {
         boton.addEventListener('click', () => {
             cambio = !cambio;
             if (cambio) {
-                boton.innerHTML = 'C°'
+                letraTemperatura.innerHTML = 'C'
+                palabraTemperatura.innerHTML = 'Celcius'
                 parrafo.textContent = `Temperatura en C:`
                 spanDato.textContent =`${datoClima[1]}°`
             } else {
-                boton.innerHTML = 'F°'
+                letraTemperatura.innerHTML = 'F'
+                palabraTemperatura.innerHTML = 'Fahrenheit'
                 parrafo.textContent = `Temperatura en F:`
                 spanDato.textContent = `${datoClima[2]}°`
             }
