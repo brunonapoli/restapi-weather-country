@@ -16,8 +16,8 @@ function mostrarDatosClima(datoClima) {
             <h4 id="cambioTemp" class="grados"></h4>
             <span id="cambioTempSpan"></span>
 
-            <ul id="boton" class="wrapper">
-                <li class="icon facebook">
+            <ul id="boton" class="botonCambio">
+                <li class="icon unidad">
                 <span id="palabraTemperatura" class="tooltip">Celcius</span>
                 <span id="letraTemperatura">C</span>
                 </li>
@@ -62,8 +62,8 @@ function conseguirValor() {
     valorInput = valorInput.toLowerCase();
     let datosPais = [];
     let climaPais = [];
-    // let paisURL = `https://restcountries.com/v3.1/name/${valorInput}?fullText=true`
-    let paisURL = `https://restcountries.com/v3.1/name/germany?fullText=true`
+    let paisURL = `https://restcountries.com/v3.1/name/${valorInput}?fullText=true`
+    // let paisURL = `https://restcountries.com/v3.1/name/germany?fullText=true`
     fetch (paisURL)
         .then((response) => response.json())
         .then(data => {
@@ -110,14 +110,14 @@ function conseguirValor() {
         })
 };
 
-conseguirValor();
+// conseguirValor();
 
-// botonInput.addEventListener('click', () => {
-//     pais.innerHTML = ``
-//     datos.innerHTML = ``
-//     clima.innerHTML =``
-//     conseguirValor();
-// });
+botonInput.addEventListener('click', () => {
+    pais.innerHTML = ``
+    datos.innerHTML = ``
+    clima.innerHTML =``
+    conseguirValor();
+});
 
 //FUNCIÓN PARA TRABAJAR CON LAS 2 APIS A LA VEZ
 // function conseguirValor() {
