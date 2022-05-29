@@ -1,5 +1,12 @@
 let botonInput = document.getElementById('botonBusqueda');
 
+function correccionRegion(region) {
+    if (region != "Americas") {
+        return region
+    }
+    return region = "América"
+};
+
 function mostrarDatosPais(datoPais) {
     pais.innerHTML = `<img src="${datoPais[0]}" class="bandera">`
     pais.innerHTML += `<div class="alinear titulo"><h3>${datoPais[1]}</h3>`
@@ -93,7 +100,7 @@ function conseguirValor() {
                     pais.innerHTML = `<h4>Ha ocurrido un error. Vuelva a intentarlo.</h4>`
                     setTimeout(() => {pais.innerHTML = ``}, 1500);
                 })
-
+            region = correccionRegion(region)
             datosPais.push(bandera, nombrePais, capital, region, reputacion)
             mostrarDatosPais(datosPais);
         })
