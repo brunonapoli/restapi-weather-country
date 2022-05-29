@@ -353,3 +353,16 @@ input:not(:placeholder-shown) + span{
     color:rgb(92, 124, 196);
     transform:translateY(0px);
 }
+
+/* ------------RESPONSIVE---------- */
+@media (max-width: 768px){
+    .contenedor{
+        width: 80%;
+    }
+}
+
+/* @media (max-width: 750px){
+    .contenedor{
+        width: 80%;
+    }
+} */
