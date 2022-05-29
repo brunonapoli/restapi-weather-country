@@ -13,12 +13,6 @@ body {
     margin-left: 5px;
 } */
 
-.inputBusqueda{
-    margin-top: 2rem;
-    text-align: center;
-    position:relative;
-	margin-bottom:25px;
-}
 /*
 .inputBusqueda label{
 	position:absolute;
@@ -308,6 +302,13 @@ body {
 
 
 /* ------ INPUT ------ */
+.inputBusqueda{
+    margin-top: 2rem;
+    text-align: center;
+    position:relative;
+	margin-bottom:25px;
+}
+
 .inputBusqueda label{
     margin-bottom:15px;
     position:relative;
@@ -315,7 +316,6 @@ body {
 }
 .inputBusqueda input{
     width:100%;
-    z-index: 12;
     background: none;
     padding:10px 0px;
     margin-top:20px;
