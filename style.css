@@ -361,8 +361,25 @@ input:not(:placeholder-shown) + span{
     }
 }
 
-/* @media (max-width: 750px){
-    .contenedor{
-        width: 80%;
+@media (max-width: 650px){
+    #datosPaisClima{
+        gap: 0px;
     }
-} */
+
+    #datos {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 600px){
+    #datosPaisClima {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+    }
+
+    #datos {
+        margin-left: 0px;
+    }
+}
