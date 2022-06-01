@@ -60,7 +60,7 @@ body {
 
 .bandera {
     justify-content: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     /* width: 30%; */
 }
 
@@ -140,6 +140,7 @@ body {
 
 #letraTemperatura {
     margin-left: 0;
+    font-size: 15px;
 }
 
 .centrarBotones {
@@ -241,9 +242,9 @@ body {
     border-radius: 50%;
     padding: 15px;
     /* margin: 10px; */
-    width: 20px;
-    height: 20px;
-    bottom: 7px;
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
     margin-left: 3px;
     font-size: 15px;
     display: flex;
@@ -355,6 +356,18 @@ input:not(:placeholder-shown) + span{
 }
 
 /* ------------RESPONSIVE---------- */
+@media (max-width: 1020px){
+    .contenedor{
+        width: 60%;
+    }
+}
+
+@media (max-width: 850px){
+    .contenedor{
+        width: 70%;
+    }
+}
+
 @media (max-width: 768px){
     .contenedor{
         width: 80%;
@@ -380,6 +393,29 @@ input:not(:placeholder-shown) + span{
     }
 
     #datos {
-        margin-left: 0px;
+        margin-left: 25%;
+    }
+
+    #clima {
+        margin-top: 5px;
+        margin-left: 25%;
+    }
+
+    #datosPaisClima {
+        justify-content: unset;
+    }
+}
+
+@media (max-width: 400px) {
+    #datos {
+        margin-left: 20%;
+    }
+
+    #clima {
+        margin-left: 20%;
+    }
+
+    #cambioTemp {
+        font-size: 15px;
     }
 }
