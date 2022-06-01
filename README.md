@@ -3,8 +3,7 @@
 ## App Info
 
 ### Descripción
-> Una aplicación en la que puedes buscar un país y te mostrara datos y su clima.
+> Una aplicación en la que puedes buscar el país que gustes y te mostrara sus datos y el clima.
 
 ### Autor
-
-Napoli Bruno
+>Napoli Bruno
