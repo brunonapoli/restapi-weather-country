@@ -26,12 +26,14 @@ function mostrarDatosClima(datoClima) {
             <ul id="boton" class="botonCambio">
                 <li class="icon unidad">
                 <span id="palabraTemperatura" class="tooltip">Celcius</span>
-                <span id="letraTemperatura">C</span>
+                <span id="letraTemperatura">${datoClima[1]}°</span>
                 </li>
             </ul>
 
         </div>
-        <div class="alinear marginTop"><h4>Horario:</h4><span>${datoClima[0].substring(11)}</span></div>
+        <div class="alinear marginTop" style= "margin-top: 0px"><h4>Horario:</h4>
+            <span>${datoClima[0].substring(11)}</span>
+        </div>
         <div class="imagenClima">
             <h4>Clima:</h4>
             <span>
@@ -43,22 +45,25 @@ function mostrarDatosClima(datoClima) {
     let boton = document.getElementById('boton');
     let parrafo = document.getElementById('cambioTemp');
     let spanDato = document.getElementById('cambioTempSpan');
-    parrafo.textContent = `Temperatura en C: `
-    spanDato.textContent = `${datoClima[1]}°`
+    // parrafo.textContent = `Temperatura en C: `
+    parrafo.textContent = `Temperatura: `
+    // spanDato.textContent = `${datoClima[1]}°`
     let cambio = true
     if (boton) {
         boton.addEventListener('click', () => {
             cambio = !cambio;
             if (cambio) {
-                letraTemperatura.innerHTML = 'C'
+                // letraTemperatura.innerHTML = 'C'
+                letraTemperatura.innerHTML = `${datoClima[1]}°`
                 palabraTemperatura.innerHTML = 'Celcius'
-                parrafo.textContent = `Temperatura en C:`
-                spanDato.textContent =`${datoClima[1]}°`
+                // parrafo.textContent = `Temperatura en C:`
+                // spanDato.textContent =`${datoClima[1]}°`
             } else {
-                letraTemperatura.innerHTML = 'F'
+                // letraTemperatura.innerHTML = 'F'
+                letraTemperatura.innerHTML = `${datoClima[2]}°`
                 palabraTemperatura.innerHTML = 'Fahrenheit'
-                parrafo.textContent = `Temperatura en F:`
-                spanDato.textContent = `${datoClima[2]}°`
+                // parrafo.textContent = `Temperatura en F:`
+                // spanDato.textContent = `${datoClima[2]}°`
             }
         });
     }
