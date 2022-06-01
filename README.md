@@ -2,8 +2,11 @@
 
 ## App Info
 
-### Descripción
-> Una aplicación en la que puedes buscar el país que gustes y te mostrara sus datos y el clima.
+### Descripción aplicación
+> Aplicación que te permite buscar el país que gustes, mostrandote sus datos y clima.
+
+### Lenguajes
+>HTML - CSS - Javascript - 2 API's: clima / país.
 
 ### Autor
 >Napoli Bruno
