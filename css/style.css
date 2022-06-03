@@ -1,0 +1,348 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(92, 124, 196);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.contenedor {
+    position: absolute;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border: #272727 solid 2px;
+    border-radius: 10px;
+    background-color: rgb(250, 245, 245);
+}
+
+.bandera {
+    justify-content: center;
+}
+
+#pais {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0.5rem;
+}
+
+.titulo {
+    margin: 15px 0;
+    justify-content: center;
+}
+
+.titulo h3 {
+    text-transform: uppercase;
+}
+
+#pais h4 {
+    text-transform: uppercase;
+    color: red;
+}
+
+#pais img {
+    max-width: 40%;
+    height: auto;
+}
+
+#datosPaisClima {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#datos {
+    left: 10%;
+    border-radius: 10px;
+    width: 70%;
+    margin-left: auto;
+}
+
+#datos p {
+    margin: 0 0 15px 0;
+}
+
+#clima {
+    border-radius: 10px;
+}
+
+#clima p {
+    margin: 0 0 15px 0;
+}
+
+#clima span img{
+    max-width: 100%;
+    height: auto;
+}
+
+#cambioTempSpan {
+    margin-left: 5px;
+}
+
+#letraTemperatura {
+    margin-left: 0;
+    font-size: 15px;
+}
+
+.centrarBotones {
+    display: flex;
+}
+
+.alinear {
+    display: flex;
+}
+
+.alinear span {
+    padding-bottom: 15px;
+    margin-left: 5px;
+}
+
+.poblacion {
+    margin-top: 10px;
+}
+
+.marginTop {
+    margin-top: 8px;
+}
+
+.imagenClima {
+    display: flex;
+    align-items:center;
+    height: 35px;
+}
+
+.imagenClima img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.imagenClima span{
+    margin-left: 5px;
+}
+
+/* ------ BOTON BUSQUEDA INPUT ------ */
+#botonBusqueda {
+  align-self: center;
+  margin-left: 10px;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 15px;
+  line-height: 10px;
+  outline: none;
+  padding: .45rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#botonBusqueda:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+#botonBusqueda:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+/* ------ BOTON CAMBIO DE MEDIDA EN LA TEMPERATURA ------ */
+.botonCambio .icon {
+    position: relative;
+    background: #ffffff;
+    color: rgb(92, 124, 196);
+    border: rgb(92, 124, 196) solid 2px;
+    border-radius: 50%;
+    padding: 15px;
+    width: 40px;
+    height: 40px;
+    bottom: 10px;
+    margin-left: 3px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+.botonCambio .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+  
+.botonCambio .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+  
+.botonCambio .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+  
+.botonCambio .icon:hover span,
+.botonCambio .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+  
+.botonCambio .unidad:hover,
+.botonCambio .unidad:hover .tooltip,
+.botonCambio .unidad:hover .tooltip::before {
+    background: rgb(92, 124, 196);
+    color: #ffffff;
+}
+
+
+/* ------ INPUT ------ */
+.inputBusqueda{
+    margin-top: 2rem;
+    text-align: center;
+    position:relative;
+	margin-bottom:25px;
+}
+
+.inputBusqueda label{
+    margin-bottom:15px;
+    position:relative;
+    border-bottom:1px solid rgb(92, 124, 196);
+}
+.inputBusqueda input{
+    width:100%;
+    background: none;
+    padding:10px 0px;
+    margin-top:20px;
+    border:none;
+    outline:none;
+}
+
+.inputBusqueda input::placeholder{
+    opacity:0;
+}
+
+.inputBusqueda article {
+    margin: 0 30px;
+    display:flex;
+    justify-content: center;
+    border-radius:5px;
+}
+.inputBusqueda span{
+    position:absolute;
+    cursor: text;
+    top:0;
+    left:0;
+    transform:translateY(30px);
+    font-size:1.1em;
+    transition-duration:300ms;
+}
+
+label:focus-within > span,
+input:not(:placeholder-shown) + span{
+    color:rgb(92, 124, 196);
+    transform:translateY(0px);
+}
+
+/* ------------RESPONSIVE---------- */
+@media (max-width: 1020px){
+    .contenedor{
+        width: 60%;
+    }
+}
+
+@media (max-width: 850px){
+    .contenedor{
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px){
+    .contenedor{
+        width: 80%;
+    }
+}
+
+@media (max-width: 650px){
+    #datosPaisClima{
+        gap: 0px;
+    }
+
+    #datos {
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 600px){
+    #datosPaisClima {
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        width: 100%;
+    }
+
+    #datos {
+        margin-left: 25%;
+    }
+
+    #clima {
+        margin-top: 5px;
+        margin-left: 25%;
+    }
+
+    #datosPaisClima {
+        justify-content: unset;
+    }
+}
+
+@media (max-width: 400px) {
+    #datos {
+        margin-left: 20%;
+    }
+
+    #clima {
+        margin-left: 20%;
+    }
+
+    #cambioTemp {
+        font-size: 15px;
+    }
+}
