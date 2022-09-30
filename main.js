@@ -38,7 +38,7 @@ function mostrarDatosClima(datoClima) {
             <span>
                ${datoClima[4]} <br>
             </span>
-            <img src = "http:${datoClima[5]}">
+            <img src = "https:${datoClima[5]}">
         </div>
         `
     let boton = document.getElementById('boton');
@@ -112,8 +112,6 @@ function conseguirValor() {
         })
 };
 
-// conseguirValor();
-
 botonInput.addEventListener('click', () => {
     pais.innerHTML = ``
     datos.innerHTML = ``
@@ -125,7 +123,7 @@ botonInput.addEventListener('click', () => {
 // function conseguirValor() {
 //     let urls = [
 //         `https://restcountries.com/v3.1/name/United Kingdom?fullText=true`,
-//         `http://api.weatherapi.com/v1/current.json?key=da6778deeada4cc8ab6172811221805&q=London`
+//         `https://api.weatherapi.com/v1/current.json?key=da6778deeada4cc8ab6172811221805&q=London`
 //       ]
 //       let requests = urls.map(url => fetch(url));
 //       Promise.all(requests)
