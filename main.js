@@ -76,7 +76,7 @@ function conseguirValor() {
             let region = data[0].region;
             let reputacion = data[0].population;
 
-            let climaURL = `http://api.weatherapi.com/v1/current.json?key=da6778deeada4cc8ab6172811221805&q=${capital}`;
+            let climaURL = `https://api.weatherapi.com/v1/current.json?key=da6778deeada4cc8ab6172811221805&q=${capital}`;
             fetch(climaURL)
                 .then(response => response.json())
                 .then(data => {
